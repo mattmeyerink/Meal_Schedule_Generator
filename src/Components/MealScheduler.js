@@ -1,12 +1,16 @@
 import React from 'react'
 
+import CurrentMeals from './CurrentMeals.js'
+
 class MealScheduler extends React.Component {
     constructor() {
         super()
         this.state = {
             possibleMeals: [],
-            assignedMeals: []
+            assignedMeals: [],
+            mealsAreAssigned: false
         }
+        this.assignMeals = this.assignMeals.bind(this)
     }
 
     componentDidMount() {
@@ -19,11 +23,35 @@ class MealScheduler extends React.Component {
             }))
     }
 
+    assignMeals() {
+        const daysPerWeek = 7
+        const mealsAlreadyUsed = []
+        for (let i = 0; i < daysPerWeek; i++) {
+            let randomMeal = Math.floor(Math.random() * Math.floor(10))
+            while (mealsAlreadyUsed.includes(randomMeal)){
+                randomMeal = Math.floor(Math.random() * Math.floor(10))
+            }
+            const newMeal = this.state.assignedMeals.push(this.state.possibleMeals[randomMeal])
+            this.setState(prevState => {
+                return (
+                    newMeal
+                )
+            })
+            mealsAlreadyUsed.push(randomMeal)
+        }
+        this.setState({mealsAreAssigned: true})
+    }
+
     render() {
-        console.log(this.state.possibleMeals)
         return(
             <div>
-                This will be the Meal Scheduler!
+                This is the Meal Scheduler Page!
+                <br />
+                <button onClick={this.assignMeals}>
+                    Schedule Your Meals!
+                </button>
+                <CurrentMeals assignedMeals={this.state.assignedMeals}
+                mealsAreAssigned={this.state.mealsAreAssigned}/>
             </div>
         )
     }
