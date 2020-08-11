@@ -14,7 +14,7 @@ class MealScheduler extends React.Component {
     }
 
     componentDidMount() {
-        const url = "https://api.edamam.com/search?q=chicken&app_id=6509b4bd&" +
+        const url = "https://api.edamam.com/search?q=balanced&app_id=6509b4bd&" +
         "app_key=f2d99a5d7c8852983396755420e3d9d9&calories=500-1000"
         fetch(url)
             .then(response => response.json())
@@ -45,8 +45,6 @@ class MealScheduler extends React.Component {
     render() {
         return(
             <div>
-                This is the Meal Scheduler Page!
-                <br />
                 <button onClick={this.assignMeals}>
                     Schedule Your Meals!
                 </button>
