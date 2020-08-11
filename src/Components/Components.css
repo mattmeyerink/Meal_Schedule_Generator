@@ -1,3 +1,13 @@
+header {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
 .menu {
     display: inline;
 }
