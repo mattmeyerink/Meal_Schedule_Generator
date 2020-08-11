@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"mealschedulegeneratof7e46e8c": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}
