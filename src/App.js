@@ -1,10 +1,11 @@
 import React from 'react'
 
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
+import { withAuthenticator } from '@aws-amplify/ui-react'
 import {Amplify, Auth} from 'aws-amplify'
 import awsconfig from './aws-exports'
 
-import Menu from './Components/Menu.js'
+import Header from './Components/Header.js'
+//import Menu from './Components/Menu.js'
 import Profile from './Components/Profile.js'
 import Home from './Components/Home.js'
 import MealScheduler from './Components/MealScheduler.js'
@@ -53,13 +54,10 @@ class App extends React.Component {
 
 
     render() {
-        console.log(this.state.currentPage)
         return (
             <div>
-                <AmplifySignOut />
-                <Menu changePage={this.changePage}/>
-                {this.state.currentPageElement}
-
+                <Header />
+                <MealScheduler />
             </div>
         )
 
