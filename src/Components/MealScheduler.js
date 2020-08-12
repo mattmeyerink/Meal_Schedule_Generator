@@ -6,6 +6,7 @@ class MealScheduler extends React.Component {
     constructor() {
         super()
         this.state = {
+            
             possibleMeals: [],
             assignedMeals: [],
             mealsAreAssigned: false,
