@@ -1,12 +1,12 @@
 import React from 'react'
 
-import CurrentMeals from './CurrentMeals.js'
+import CurrentMealsContainer from './CurrentMealsContainer.js'
 
 class MealScheduler extends React.Component {
     constructor() {
         super()
         this.state = {
-            
+
             possibleMeals: [],
             assignedMeals: [],
             mealsAreAssigned: false,
@@ -62,7 +62,7 @@ class MealScheduler extends React.Component {
         return(
             <div>
                 {this.state.mealsAreAssigned ?
-                <CurrentMeals data = {this.state} /> :
+                <CurrentMealsContainer data = {this.state} /> :
                 <button onClick={this.assignMeals}>
                     Schedule Your Meals!
                 </button>}
