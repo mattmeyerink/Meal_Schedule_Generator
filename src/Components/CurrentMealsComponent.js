@@ -18,11 +18,31 @@ function CurrentMealsComponent(props) {
                 Change Meal
                 </button>
             </div> :
-            <AddMeal meal={props.data.mondayMeal}
-            changingMeal={() => props.changingMeal('monday')}
-            updateMeal={props.data.updateMeal}/>}
+            <div>
+                <h3>New Meal</h3>
+                <form>
+                    <input type='textbox' placeholder="Name of Meal"
+                    value={props.mondayMealLabel} name="mondayMealLabel"
+                    onChange={props.handleChange}/>
+                    <br/>
+                    <br/>
+
+                    <label>
+                        Ingredients (items separated by a comma and a single space)
+                    </label>
+                    <br/>
+                    <input type="text" value={props.mondayMealIngredients}
+                    name="mondayMealIngredients" onChange={props.handleChange}/>
+                    <br/>
+                    <br/>
+                    <button onClick={() => props.changingMeal('monday')}>
+                    Submit
+                    </button>
+                </form>
+            </div>}
 
             <h2>Tuesday</h2>
+
             {!props.data.tuesdayMealEditing ?
             <div>
                 <h3>{props.data.tuesdayMeal.label}</h3>
