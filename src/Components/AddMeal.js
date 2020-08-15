@@ -4,11 +4,11 @@ class AddMeal extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            meal: props.meal,
+            meal: this.props.meal,
             label: "",
             ingredientsString: "",
             ingredientsLines: [],
-            mealSource: "User"
+            source: "User"
         }
         this.handleChange = this.handleChange.bind(this)
         this.saveIngredientsToArray = this.saveIngredientsToArray.bind(this)
@@ -16,23 +16,28 @@ class AddMeal extends React.Component {
     }
 
     saveIngredientsToArray() {
-        this.setState({ingredientsArray: this.state.ingredientsString.split(", ")})
+        const ingredientsArray = this.state.ingredientsString.split(", ")
+        console.log(ingredientsArray)
+        this.setState({ingredientsLines: ingredientsArray})
     }
 
     handleChange(event) {
         const {name, value} = event.target
         this.setState({[name]: value})
-        if (name === "ingredientsLines") {
+        if (name === "ingredientsString") {
             this.saveIngredientsToArray()
         }
     }
 
     pushTogetherFinalMeal(){
-        const mealToReturn = {
-            ...this.state.label,
-            ...this.state.ingredientLines
-        }
-        this.setState({meal: mealToReturn})
+        this.setState({meal: {
+            label: this.state.label,
+            ingredientList: this.state.ingredientsArray,
+            source: this.state.source
+        }})
+
+        console.log(this.state.meal)
+
         this.props.changingMeal()
     }
 
@@ -51,8 +56,8 @@ class AddMeal extends React.Component {
                         Ingredients (items separated by a comma and a single space)
                     </label>
                     <br/>
-                    <input type="text" value={this.state.ingredientLines}
-                    name="ingredientsLines" onChange={this.handleChange}/>
+                    <input type="text" value={this.state.ingredientsString}
+                    name="ingredientsString" onChange={this.handleChange}/>
                     <br/>
                     <br/>
                     <button onClick={this.pushTogetherFinalMeal}>Submit</button>
