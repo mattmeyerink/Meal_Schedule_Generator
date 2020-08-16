@@ -5,7 +5,7 @@ import {Amplify, Auth} from 'aws-amplify'
 import awsconfig from './aws-exports'
 
 import Header from './Components/Header.js'
-//import Menu from './Components/Menu.js'
+import Menu from './Components/Menu.js'
 import Profile from './Components/Profile.js'
 import Home from './Components/Home.js'
 import MealScheduler from './Components/MealScheduler.js'
@@ -28,23 +28,22 @@ class App extends React.Component {
         this.setState({currentUserEmail: userInfo.attributes.email})
     }
 
-    changePage(event) {
-        const {name} = event.target
-        this.setState({currentPage: name})
+    changePage(currentPage) {
+        this.setState({currentPage: currentPage})
 
-        if (this.state.currentPage === "Profile") {
+        if (currentPage === "Profile") {
             this.setState({
                 currentPageElement:
                 <Profile />
             })
         }
-        else if (this.state.currentPage === "home") {
+        else if (currentPage === "home") {
             this.setState({
                 currentPageElement:
                 <Home />
             })
         }
-        else if (this.state.currentPage === "mealScheduler") {
+        else if (currentPage === "mealScheduler") {
             this.setState({
                 currentPageElement:
                 <MealScheduler />
@@ -56,7 +55,8 @@ class App extends React.Component {
         return (
             <div>
                 <Header />
-                <MealScheduler />
+                <Menu changePage={this.changePage} />
+                {this.state.currentPageElement}
             </div>
         )
 
