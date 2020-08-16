@@ -5,6 +5,7 @@ import {Amplify, Auth} from 'aws-amplify'
 import awsconfig from './aws-exports'
 
 import Header from './Components/Header.js'
+import Footer from './Components/Footer.js'
 import Menu from './Components/Menu.js'
 import Profile from './Components/Profile.js'
 import Home from './Components/Home.js'
@@ -72,6 +73,7 @@ class App extends React.Component {
                 <Header />
                 <Menu changePage={this.changePage} />
                 {this.state.currentPageElement}
+                <Footer />
             </div>
         )
 

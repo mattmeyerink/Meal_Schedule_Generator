@@ -13,6 +13,23 @@ header {
     margin: 25px;
 }
 
+footer {
+    background-color: #E85A4F;
+    color: #EAE7DC;
+    padding: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    display: inline-block;
+    margin: 25px;
+}
+
+footer > p {
+
+}
+
 .menu {
     display: inline;
 }
@@ -25,7 +42,7 @@ header {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 18px;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     margin-left: 25px;
 }
@@ -70,4 +87,13 @@ header {
     display: inline-block;
     font-size: 25px;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.home_page > button:hover {
+    background-color: #E98074;
+}
+
+.home_page > button:active {
+    background-color: #E85A4F;
+    transform: translateY(4px);
 }
