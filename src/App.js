@@ -10,6 +10,8 @@ import Profile from './Components/Profile.js'
 import Home from './Components/Home.js'
 import MealScheduler from './Components/MealScheduler.js'
 
+import './index.css'
+
 Amplify.configure(awsconfig)
 
 class App extends React.Component {
@@ -66,7 +68,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='app'>
                 <Header />
                 <Menu changePage={this.changePage} />
                 {this.state.currentPageElement}
