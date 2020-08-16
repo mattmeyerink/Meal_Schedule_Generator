@@ -21,11 +21,22 @@ class App extends React.Component {
             currentPageElement: <Home />
         }
         this.changePage = this.changePage.bind(this)
+        this.handleMealScheduleButton = this.handleMealScheduleButton.bind(this)
     }
 
     async componentDidMount() {
         const userInfo = await Auth.currentUserInfo()
         this.setState({currentUserEmail: userInfo.attributes.email})
+
+        this.setState({currentPageElement: <Home
+            handleMealScheduleButton={this.handleMealScheduleButton}/>})
+    }
+
+    handleMealScheduleButton(){
+        this.setState({
+            currentPage: "mealScheduler",
+            currentPageElement: <MealScheduler />
+        })
     }
 
     changePage(currentPage) {
@@ -40,7 +51,9 @@ class App extends React.Component {
         else if (currentPage === "home") {
             this.setState({
                 currentPageElement:
-                <Home />
+                <Home
+                handleMealScheduleButton={this.handleMealScheduleButton}
+                />
             })
         }
         else if (currentPage === "mealScheduler") {
