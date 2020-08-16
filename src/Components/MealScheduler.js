@@ -23,13 +23,7 @@ class MealScheduler extends React.Component {
     }
 
     componentDidMount() {
-        const url = "https://api.edamam.com/search?q=Dinner&app_id=6509b4bd&" +
-        "app_key=f2d99a5d7c8852983396755420e3d9d9&calories=500-1000"
-        fetch(url)
-            .then(response => response.json())
-            .then(data => this.setState({
-                possibleMeals: data.hits
-            }))
+        this.setState({possibleMeals: this.props.possibleMeals})
     }
 
     assignMeals() {

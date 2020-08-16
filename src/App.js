@@ -21,7 +21,8 @@ class App extends React.Component {
         this.state = {
             currentUserEmail: "",
             currentPage: "home",
-            currentPageElement: <Home />
+            currentPageElement: <Home />,
+            possibleMeals: []
         }
         this.changePage = this.changePage.bind(this)
         this.handleMealScheduleButton = this.handleMealScheduleButton.bind(this)
@@ -33,12 +34,20 @@ class App extends React.Component {
 
         this.setState({currentPageElement: <Home
             handleMealScheduleButton={this.handleMealScheduleButton}/>})
+
+        const url = "https://api.edamam.com/search?q=Dinner&app_id=6509b4bd&" +
+        "app_key=f2d99a5d7c8852983396755420e3d9d9&calories=500-1000"
+        fetch(url)
+            .then(response => response.json())
+            .then(data => this.setState({
+                possibleMeals: data.hits
+            }))
     }
 
     handleMealScheduleButton(){
         this.setState({
             currentPage: "mealScheduler",
-            currentPageElement: <MealScheduler />
+            currentPageElement: <MealScheduler possibleMeals={this.state.possibleMeals}/>
         })
     }
 
@@ -62,7 +71,7 @@ class App extends React.Component {
         else if (currentPage === "mealScheduler") {
             this.setState({
                 currentPageElement:
-                <MealScheduler />
+                <MealScheduler possibleMeals={this.state.possibleMeals}/>
             })
         }
     }
