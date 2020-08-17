@@ -1,29 +1,23 @@
 header {
     background-color: #E85A4F;
     color: #EAE7DC;
-    padding: 20px;
-    padding-left: 350px;
-    padding-right: 350px;
     padding-top: 15px;
     padding-bottom: 15px;
-    font-size: 18px;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    display: inline-block;
+    margin-bottom: 25px;
+    font-size: 24px;
     text-align: center;
-    margin: 25px;
 }
 
 footer {
     background-color: #E85A4F;
     color: #EAE7DC;
-    padding: 20px;
-    padding-left: 25px;
-    padding-right: 25px;
     padding-top: 15px;
     padding-bottom: 15px;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    display: inline-block;
-    margin: 25px;
+    margin-top: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 footer > p {
@@ -70,11 +64,12 @@ footer > p {
 
 .home_page > h1 {
     background-color: #E85A4F;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
     padding-top: 50px;
     padding-bottom: 50px;
     display: inline-block;
+    margin: 75px;
 }
 
 .home_page > button {
@@ -94,6 +89,37 @@ footer > p {
 }
 
 .home_page > button:active {
+    background-color: #E85A4F;
+    transform: translateY(4px);
+}
+
+.meal_scheduler_before_scheduled {
+    background-image: url(https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80);
+
+    margin: 25px;
+    padding-top: 250px;
+    padding-bottom: 250px;
+    background-size: cover;
+}
+
+.meal_scheduler_before_scheduled > button {
+    background-color: #737373;
+    border: none;
+    color: #EAE7DC;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 25px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    margin: 0 auto;
+}
+
+.meal_scheduler_before_scheduled > button:hover {
+    background-color: #E98074;
+}
+
+.meal_scheduler_before_scheduled > button:active {
     background-color: #E85A4F;
     transform: translateY(4px);
 }

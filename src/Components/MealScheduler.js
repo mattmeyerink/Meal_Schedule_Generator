@@ -57,9 +57,12 @@ class MealScheduler extends React.Component {
             <div>
                 {this.state.mealsAreAssigned ?
                 <CurrentMealsContainer data = {this.state} /> :
-                <button onClick={this.assignMeals}>
-                    Schedule Your Meals!
-                </button>}
+                <div className="meal_scheduler_before_scheduled">
+                    <button onClick={this.assignMeals}>
+                        Schedule Your Meals!
+                    </button>
+                </div>
+                }
             </div>
         )
     }
