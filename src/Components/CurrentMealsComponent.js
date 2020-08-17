@@ -1,8 +1,10 @@
 import React from 'react'
 
+import './Components.css'
+
 function CurrentMealsComponent(props) {
     return(
-        <div>
+        <div className="current_meals">
             <h1>This Week's Meals</h1>
 
             <h2>Monday</h2>

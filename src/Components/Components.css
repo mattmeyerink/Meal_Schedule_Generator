@@ -123,3 +123,11 @@ footer > p {
     background-color: #E85A4F;
     transform: translateY(4px);
 }
+
+.current_meals {
+    background-color: #E85A4F;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    display: block;
+    text-align: center;
+    margin: 25;
+}
