@@ -64,10 +64,7 @@ footer > p {
 
 .home_page > h1 {
     background-color: #E85A4F;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding: 30px;
     display: inline-block;
     margin: 75px;
 }

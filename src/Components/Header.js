@@ -8,7 +8,7 @@ function Header() {
                 Customizable Dinner Scheduler
             </h1>
             <p>
-                Taking the "I don't knows out of meal planning"
+                - Taking the "I don't knows" out of meal planning -
             </p>
         </header>
     )

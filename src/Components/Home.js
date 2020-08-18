@@ -3,7 +3,7 @@ import React from 'react'
 function Home(props) {
     return(
         <div className="home_page">
-            <h1>Your journey to an easy, organized meal plan starts here</h1>
+            <h1>Your journey to an easy, organized meal plan starts here!</h1>
             <br />
             <button onClick={props.handleMealScheduleButton}>
             Begin Scheduling
