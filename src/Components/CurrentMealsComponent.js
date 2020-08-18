@@ -1,5 +1,6 @@
 import React from 'react'
 
+import ExportPDF from './ExportPDF'
 import './Components.css'
 
 function CurrentMealsComponent(props) {
@@ -243,6 +244,9 @@ function CurrentMealsComponent(props) {
                         </button>
                     </form>
                 </div>}
+                <br />
+                <br />
+                <ExportPDF data={props.data} printingIngredients={props.printingIngredients}/>
             </div>
         </div>
     )

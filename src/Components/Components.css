@@ -185,13 +185,13 @@ footer > p {
 }
 
 .pdf_export {
-    background-color: #737373;
+    background-color: #EAE7DC;
     border: none;
-    color: #EAE7DC;
+    color: #737373;
     padding: 15px 32px;
     text-align: center;
     display: inline-block;
-    font-size: 18px;
+    font-size: 15px;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     margin: 0 auto;
     text-decoration: none;
