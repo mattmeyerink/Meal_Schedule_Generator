@@ -1,6 +1,7 @@
 import React from 'react'
 
 import CurrentMealsComponent from './CurrentMealsComponent.js'
+import ExportPDF from './ExportPDF.js'
 
 class CurrentMealsContainer extends React.Component {
     constructor(props) {
@@ -119,11 +120,14 @@ class CurrentMealsContainer extends React.Component {
 
     render() {
         return(
-            <CurrentMealsComponent
-            printingIngredients={this.printingIngredients}
-            changingMeal={this.changingMeal}
-            handleChange={this.handleChange}
-            data={this.state}/>
+            <div>
+                <CurrentMealsComponent
+                printingIngredients={this.printingIngredients}
+                changingMeal={this.changingMeal}
+                handleChange={this.handleChange}
+                data={this.state}/>
+                <ExportPDF data={this.state}/>
+            </div>
         )
     }
 }
