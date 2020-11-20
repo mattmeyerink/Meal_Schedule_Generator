@@ -35,8 +35,10 @@ class App extends React.Component {
         this.setState({currentPageElement: <Home
             handleMealScheduleButton={this.handleMealScheduleButton}/>})
 
-        const url = "https://api.edamam.com/search?q=Dinner&app_id=6509b4bd&" +
-        "app_key=f2d99a5d7c8852983396755420e3d9d9&calories=500-1000"
+        const url = "https://api.edamam.com/search?q=Dinner&app_id=" +
+        process.env.REACT_APP_ID +
+        "app_key=" + process.env.REACT_APP_API_KEY +
+        "&calories=500-1000"
         fetch(url)
             .then(response => response.json())
             .then(data => this.setState({
